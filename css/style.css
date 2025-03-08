@@ -1,0 +1,901 @@
+:root {
+  --primary: #D32F2F; /* اللون الرئيسي - أحمر */
+  --primary-dark: #B71C1C; /* اللون الرئيسي الداكن - أحمر داكن */
+  --primary-light: #FFCDD2; /* اللون الرئيسي الفاتح - أحمر فاتح */
+  --secondary: #212121; /* اللون الثانوي - أسود */
+  --secondary-light: #484848; /* اللون الثانوي الفاتح */
+  --background: #FFFFFF; /* لون الخلفية - أبيض */
+  --accent: #F5F5F5; /* لون التمييز - أبيض */
+  --text-primary: #333333; /* لون النص الرئيسي */
+  --text-secondary: #757575; /* لون النص الثانوي */
+  --border-color: #E0E0E0; /* لون الحدود */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل العناصر */
+  --success: #4CAF50; /* لون النجاح - أخضر */
+  --warning: #FFC107; /* لون التحذير - أصفر */
+  --danger: #F44336; /* لون الخطر - أحمر */
+  --info: #2196F3; /* لون المعلومات - أزرق */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* تنسيق الأزرار */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(211, 47, 47, 0.3);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(211, 47, 47, 0.4);
+}
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(211, 47, 47, 0.4);
+}
+
+/* تنسيق القوائم */
+.navbar {
+  background-color: var(--primary);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: white !important;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-light) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* تنسيق البطاقات */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* تنسيق الصفحة الرئيسية */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 0;
+  color: white;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.search-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* تحسين فلتر البحث والتصفية */
+.filter-sidebar {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 20px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.filter-sidebar .card-header {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 1.25rem;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.filter-sidebar .card-header h5 {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+.filter-sidebar .card-header i {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.filter-sidebar .card-body {
+  padding: 1.5rem;
+}
+
+.filter-sidebar .form-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.filter-sidebar .form-control,
+.filter-sidebar .form-select {
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: var(--accent);
+}
+
+.filter-sidebar .form-control:focus,
+.filter-sidebar .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(211, 47, 47, 0.15);
+  background-color: white;
+}
+
+.filter-sidebar .form-control::placeholder {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.filter-sidebar .mb-3 {
+  margin-bottom: 1.25rem !important;
+}
+
+.filter-sidebar .mb-3:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* تحسين أزرار الفلتر */
+.filter-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.filter-buttons .btn {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.filter-buttons .btn i {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.filter-buttons .btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.filter-buttons .btn-outline-secondary {
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.filter-buttons .btn-outline-secondary:hover {
+  background-color: var(--accent);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* فلاتر شائعة */
+.popular-filters {
+  margin-bottom: 1.5rem;
+}
+
+.popular-filters .title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.popular-filters .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.popular-filters .btn {
+  border-radius: 50px;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.85rem;
+  background-color: var(--accent);
+  color: var(--text-primary);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.popular-filters .btn:hover,
+.popular-filters .btn.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* تحسين الفلتر للشاشات الصغيرة */
+@media (max-width: 992px) {
+  .filter-sidebar {
+    position: relative;
+    top: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-toggle-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-collapse {
+    display: none;
+  }
+  
+  .filter-collapse.show {
+    display: block;
+  }
+}
+
+/* تحسين مظهر عدد النتائج والترتيب */
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background-color: var(--accent);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+}
+
+.results-count {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+.sort-select {
+  min-width: 200px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  background-color: white;
+}
+
+.sort-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(211, 47, 47, 0.15);
+}
+
+/* تحسين مظهر الفلتر المحدد */
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--accent);
+  color: var(--text-primary);
+  padding: 0.4rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.filter-tag:hover {
+  background-color: var(--primary-light);
+}
+
+.clear-all-filters {
+  color: var(--primary);
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.clear-all-filters:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.clear-all-filters i {
+  margin-left: 0.35rem;
+}
+
+/* تحسين مظهر قوائم السيارات */
+.car-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.car-image-container {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.car-card:hover .car-image {
+  transform: scale(1.05);
+}
+
+.car-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.7) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.car-card:hover .car-image-overlay {
+  opacity: 1;
+}
+
+.car-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.car-buttons .btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: var(--primary);
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.car-buttons .btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.car-card-body {
+  padding: 1.25rem;
+}
+
+.car-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.car-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.car-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.car-detail {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.car-detail i {
+  margin-left: 0.35rem;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.car-footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-location {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.car-location i {
+  margin-left: 0.35rem;
+  color: var(--primary);
+}
+
+/* تنسيق صفحة إضافة سيارة */
+.add-car-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.add-car-form .form-label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.add-car-form .form-control,
+.add-car-form .form-select {
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.add-car-form .form-control:focus,
+.add-car-form .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(211, 47, 47, 0.25);
+  background-color: white;
+}
+
+/* قسم لماذا نحن */
+.why-us {
+  background-color: var(--accent);
+  padding: 4rem 0;
+}
+
+.why-us-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+
+.why-us-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.why-us-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.why-us-title {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+/* تنسيق تذييل الصفحة */
+footer {
+  background-color: var(--secondary);
+  color: white;
+  padding: 3rem 0 1.5rem;
+}
+
+footer h5 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+footer h5::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary);
+  bottom: 0;
+  right: 0;
+}
+
+footer ul {
+  padding-right: 0;
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 0.75rem;
+}
+
+footer ul li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: var(--primary-light);
+  padding-right: 5px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* تنسيق صفحة تفاصيل السيارة */
+.car-details {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.car-gallery {
+  margin-bottom: 2rem;
+}
+
+.car-gallery-main {
+  height: 400px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.car-gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-gallery-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.car-gallery-thumb {
+  width: 80px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.car-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-gallery-thumb.active,
+.car-gallery-thumb:hover {
+  opacity: 1;
+  border: 2px solid var(--primary);
+}
+
+.car-details-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.car-details-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.car-details-info {
+  margin-bottom: 2rem;
+}
+
+.car-details-info-title {
+  font-weight: 700;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.car-details-info-title::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary);
+  bottom: -1px;
+  right: 0;
+}
+
+.info-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  width: 50%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.75rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover .category-icon {
+  background-color: var(--primary-light);
+  transform: scale(1.1);
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.info-value {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.seller-info {
+  background-color: var(--accent);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.seller-info-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.seller-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.seller-contact-btn i {
+  margin-left: 0.5rem;
+}
+
+/* تنسيق صفحة الاتصال */
+.contact-info-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+/* تنسيق للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .search-box {
+    padding: 1.5rem;
+  }
+  
+  .info-item {
+    width: 100%;
+  }
+  
+  .car-gallery-main {
+    height: 300px;
+  }
+}
+
+/* تنسيق للشاشات المتوسطة */
+@media (max-width: 992px) {
+  .filter-sidebar {
+    margin-bottom: 2rem;
+  }
+}
+
+/* تأثيرات إضافية */
+.hover-zoom {
+  transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* تنسيق الصور المصغرة */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-overlay:hover {
+  opacity: 1;
+}
+
+.image-overlay .btn {
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.image-overlay:hover .btn {
+  transform: translateY(0);
+}
